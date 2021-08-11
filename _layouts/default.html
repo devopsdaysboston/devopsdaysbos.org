@@ -1,0 +1,74 @@
+---
+---
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include 2021-head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached browser-upgrade.html %}
+    {% include_cached masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+    <script type="text/javascript">
+      var loadInt = setInterval(function() {
+        if($) {
+          clearInterval(loadInt);
+          $(function () {   //  <- jquery is not yet initialized
+            updateOffsiteLinksToOpenInBlank()
+
+            if(window.onloadqueue && window.onloadqueue != undefined && window.onloadqueue.length > 0) {
+              $.each(window.onloadqueue,function(i,v) { v() });
+            }
+          });
+        } else {
+          console.log(loadInt);
+        }
+      },500);
+      function updateOffsiteLinksToOpenInBlank() {
+        var host = document.location.hostname
+        var els = $("a:not(:target)").each(function(i,o) {
+          if(((o.href+"").trim().length > 0 && (o.href.indexOf('://'+host)<1 || $(o).attr('use-same-tab') == "false"))) {
+            if($(o).attr('is-external-link') != "true") {
+              $(o).attr('is-external-link','true')
+              $(o).attr('target','_blank')
+              var span = $('<span class="external-link-icon"></span>')
+              span.click(function() { $(o).click() })
+              span.insertAfter(o)
+            }
+          }
+        });
+        //alert(els.length);
+      }
+    </script>
+
+  </body>
+</html>

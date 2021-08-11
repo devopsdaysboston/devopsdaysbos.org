@@ -1,0 +1,44 @@
+---
+layout: s-2021-default
+---
+
+{% assign addpath = "2021/" %}
+{% assign person = site.data.s-2021-speakers.items | where_exp:"item", "item.id == page.id" | first %}
+{% assign content = content | markdownify | strip %}
+
+
+<div class="flexbox">
+  {% include person-left.html person=person extracontent=content addpath=addpath %}
+  <div style="min-width:300px;flex:1;align-self:flex-start;">
+    {% if person.legacy_page %}
+      {% if person.legacy_page.size > 0 %}
+    <div style="font-size:0.5em;">Redirecting to <a href="{{person.legacy_page}}">{{person.legacy_page}}</a> <span id="redirect_seconds"></span></div>
+    <script type="text/javascript">
+      window.onloadqueue=(window.onloadqueue||[]).concat([function () {
+        var secondsLeft = 6000;
+        setInterval(function() {
+          $("#redirect_seconds").text("in "+secondsLeft + " seconds");
+          secondsLeft--;
+        },1000);
+        setTimeout(function() {
+          document.location="{{person.legacy_page}}"
+        },secondsLeft*1000);
+      }]);
+    </script>
+      {% endif %}
+    {% endif %}
+
+    <h2>{{ person.title }}</h2>
+    <p>
+      {{ person.abstract | markdownify }}
+    </p>
+    {% if content.size > 0 %}
+      <p>
+      {% include person-bio.html person=person addpath=addpath %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% if content.size < 1 %}
+  {% include person-bio.html person=person addpath=addpath %}
+{% endif %}

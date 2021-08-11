@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Home"
+redirect_to: https://devopsdays.org/events/2021-boston/welcome/
+---
 # This is placeholder content!
 
 * How to do top-level redirects? [maybe this](https://github.com/jekyll/jekyll-redirect-from)

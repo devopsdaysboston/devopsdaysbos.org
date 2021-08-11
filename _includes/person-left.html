@@ -1,0 +1,33 @@
+{% assign addpath = include.addpath %}
+{% assign person = include.person %}
+{% assign content = include.extracontent %}
+{% assign socialcard = person.id %}
+{% assign content = content | markdownify | strip %}
+{% if include.socialcard %}{% assign socialcard = include.socialcard %}{% endif %}
+<div style="min-width:200px;width:25%;margin:2em;float:left;text-align:center;align-self:flex-start;">
+  <img id="speaker-thumb" src="/assets/{{ addpath }}images/speakers/socials/{{ socialcard }}.png"
+        style="width:100%;border-radius:2em;visibility:hidden;"
+        title="{{ person.name }}: {{ person.title }}" />
+{% if person.handles %}
+    {% assign social = person.handles %}
+    <div class="flexbox">
+{% if social.twitter %}<svg class="svg-icon grey" title="{{ person.name }} on Twitter" onclick="window.open('https://twitter.com/{{ social.twitter }}')" style="cursor:pointer;"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>{% endif %}
+{% if social.linkedin %}<svg class="svg-icon grey" title="{{ person.name }} on LinkedIn" onclick="window.open('https://www.linkedin.com/in/{{ social.linkedin }}')" style="cursor:pointer;"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>{% endif %}
+{% endif %}
+    </div>
+  <p style="font-size:1.5em;">{{ person.name }}<br /><span style="text-transform: uppercase;">{{ person.role }}</span></p>
+  <div class="flexbox">
+    <a class="flexbox-button" href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session</a>
+  </div>
+  {% if content.size > 0 %}
+    {{ content }}
+  {% endif %}
+</div>
+<script type="text/javascript">
+  window.onloadqueue=(window.onloadqueue||[]).concat([function () {
+    $('#speaker-thumb').attr('src','/assets/{{ addpath }}images/speakers/thumbs/{{ person.id }}.jpeg').css({'border-radius':'50%'})
+    [0].onload=function() {
+      $(this).css({'visibility':'visible'})
+    }
+  }]);
+</script>

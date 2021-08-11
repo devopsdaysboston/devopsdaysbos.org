@@ -1,0 +1,35 @@
+items:
+- id: angel-rivera
+  name: Angel Rivera
+  bio: |
+    Angel started his career as an US Air Force Space Systems Operations specialist in Cape Canaveral AF Station where he realized his passion for technology and software development. He has extensive experience in the private, public and military sectors and his technical experience includes military/space lift operations, technical writing, software development, SRE/DevOPs engineering. He also has a wealth of experience in defense and federal sectors such as contracting, information systems security and management.
+
+    You can usually find him speaking at or organizing local tech meetups and hackathons where he enjoys engaging with developers.
+
+    Angel’s passions are positive disruption, learning, teaching, mentoring but most of all inspiring all forms of technologists & building awesome tech communities.
+  role: presenter
+  keynote: false
+  title: "Are your CI/CD Pipelines Secure?"
+  abstract: |
+    Most CI/CD pipelines used by DevOps teams utilize integrations with services such as APIs, databases and other critical systems to complete their workflows. These integrations usually required the use of extremely sensitive secrets such as passwords, tokens or certificates and must be securely protected at all times. Unauthorized access of these pipeline secrets open these systems to threats from bad actors and illegal access of data.
+
+    In this talk Angel will discuss common pain points in properly securing applications, CI/CD pipelines and protecting sensitive access gates to integration targets. Attendees will learn strategies to secure their applications, sensitive data and pipeline integration points. Attendees will leave with a better understanding of how to implement security layers that can improve their pipeline security posture.
+  handles:
+    twitter: punkdata
+    linkedin: punkdata
+  legacy_page: https://devopsdays.org/events/2021-boston/program/angel-rivera/
+- id: anurag-gupta
+  name: Anurag Gupta
+  bio: |
+    Prior to Shoreline, I spent 7.5 years at Amazon Web Services (AWS), where I ran their analytic and relational database services. Within analytics, this included Athena, Data Pipeline, EMR, Glue, LakeFormation, Managed Blockchain, and Redshift. Within relational databases, these were Aurora for MySQL and PostgreSQL and RDS for MariaDB, MySQL, Oracle, PostgreSQL, and SQL Server. Managing services deployed on millions of nodes while ticketing on a per-instance basis taught me the importance of distributed control and automation.
+  role: presenter
+  keynote: false
+  title: "Restarts and rollbacks don't fix everything: Automating Day 2 Operations"
+  abstract: |
+    As our systems grow exponentially larger and more complex, the challenge DevOps and SREs face to keep production systems online also grows. In order to get ahead of ticket queues and improve availability, there’s an imperative for us to automate remediation of issues entirely. This is more attainable than most people realize because while the causes of an incident may be in the thousands, the number of remediations is usually small and consistent.
+
+    In this session, I’ll describe real outages I saw at AWS, group them into their common infrastructure resolutions, and describe how we built speculative, automated resolutions that reduced tickets, improved availability, and reduced costs while growing our fleet 1000x. You’ll walk away with concrete ideas that you can put into place to improve availability and reduce burnout.
+  handles:
+    twitter: awgupta
+    linkedin: awgupta
+  legacy_page: https://devopsdays.org/events/2021-boston/program/anurag-gupta/
