@@ -26,17 +26,17 @@ for ID in $person_ids; do
     speaker_bio=$(printf "$speaker_info_raw" | awk -v RS='^$' -v FS='\\+\\+\\+' '{ n = split($0, a); print a[3] }')
     speaker_meta=$(printf "$speaker_info_raw" | awk -v RS='^$' -v FS='\\+\\+\\+' '{ n = split($0, a); print a[2] }')
     speaker_fullname=$(printf "$speaker_meta" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp," = ");
-        if (nvp[1] ~ /Title*/) { print nvp[2]; }
+        if (nvp[1] ~ /Title*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
     speaker_twitter=$(printf "$speaker_meta" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp," = ");
-        if (nvp[1] ~ /twitter*/) { print nvp[2]; }
+        if (nvp[1] ~ /twitter*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
     speaker_website=$(printf "$speaker_meta" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp," = ");
-        if (nvp[1] ~ /website*/) { print nvp[2]; }
+        if (nvp[1] ~ /website*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
     speaker_talk_raw=$(curl -s "https://raw.githubusercontent.com/devopsdays/devopsdays-web/main/content/events/$YEAR-boston/program/$ID.md")
     speaker_title=$(echo "$speaker_talk_raw" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp,": ");
-          if (nvp[1] ~ /title*/) { print nvp[2]; }
+          if (nvp[1] ~ /title*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
     speaker_abstract=$(echo "$speaker_talk_raw" | awk -v RS='^$' -v FS='\\-\\-\\-' '{ n = split($0, a); print a[3] }')
 
@@ -57,6 +57,8 @@ permalink: /$YEAR/speakers/$ID
     """ > $PAGE_PATH
 
     echo $INDEX
+    echo $speaker_title
+
     yqstmt="""
       .items[$INDEX].id = \"$ID\" |
       .items[$INDEX].name = \"$speaker_fullname\" |
