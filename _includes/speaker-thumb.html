@@ -1,0 +1,7 @@
+{% assign person = include.person %}
+{% assign addpath = include.addpath %}
+{% assign roledir = "speakers" %}
+{% if person.role == "panelist" %}{% assign roledir = "panelists" %}{% endif %}
+<div style="max-width:125px;min-height:230px;text-align:center;margin:1em;">
+  {%- if person.bio -%}<a href="/{{ addpath }}{{ roledir }}/{{ person.id }}">{%- endif -%}<img src="/assets/{{ addpath }}images/speakers/thumbs/{{ person.id }}.jpeg" title="{{ person.name }}" style="width:100%;border-radius:50%;"><br />{{ person.name }}{%- if person.bio -%}</a>{%- endif -%}
+</div>
