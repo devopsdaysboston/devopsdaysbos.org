@@ -8,11 +8,14 @@
   <img id="speaker-thumb" src="/assets/{{ addpath }}images/speakers/socials/{{ socialcard }}.png"
         style="width:100%;border-radius:2em;visibility:hidden;"
         title="{{ person.name }}: {{ person.title }}" />
+    <div class="flexbox" style="margin:0.5em;">
 {% if person.handles %}
     {% assign social = person.handles %}
-    <div class="flexbox">
 {% if social.twitter %}<svg class="svg-icon grey" title="{{ person.name }} on Twitter" onclick="window.open('https://twitter.com/{{ social.twitter }}')" style="cursor:pointer;"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>{% endif %}
 {% if social.linkedin %}<svg class="svg-icon grey" title="{{ person.name }} on LinkedIn" onclick="window.open('https://www.linkedin.com/in/{{ social.linkedin }}')" style="cursor:pointer;"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#linkedin' | relative_url }}"></use></svg>{% endif %}
+{% endif %}
+{% if person.website %}
+<svg class="svg-icon grey" title="{{ person.name }}'s Website" onclick="window.open('{{ person.website }}')" style="cursor:pointer;"><use xlink:href="{{ '/assets/images/minima-social-icons.svg#dribbble' | relative_url }}"></use></svg>
 {% endif %}
     </div>
   <p style="font-size:1.5em;">{{ person.name }}<br /><span style="text-transform: uppercase;">{{ person.role }}</span></p>
