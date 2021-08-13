@@ -29,6 +29,7 @@ layout: s-2021-default
     {% endif %}
 
     <h2>{{ person.title }}</h2>
+    <a href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session on {{ person.date | date: '%B %d, %Y' }} from {{ person.start_time | date: '%k:%M%P' }} to {{ person.end_time | date: '%k:%M%P' }} EST</a>
     <p>
       {{ person.abstract | markdownify }}
     </p>

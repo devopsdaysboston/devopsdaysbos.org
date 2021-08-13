@@ -19,15 +19,25 @@ DATA_PATH=../_data/s-$YEAR-speakers.yaml
 echo "items: []" > $DATA_PATH
 INDEX=0
 
+function trim() {
+  local ret=`echo $1 | sed -e 's/^[[:space:]]*//'`
+  echo "$ret"
+}
+
 person_ids=$(yq eval -j '.program' $manifest_path | jq --raw-output '.[] | select(.type=="talk") | .title')
 for ID in $person_ids; do
     echo ID:$ID
+    talk_date=$(yq eval --unwrapScalar ".program | .[] | select(.title==\"$ID\") | .date" $manifest_path)
+    talk_start_time=$(yq eval --unwrapScalar ".program | .[] | select(.title==\"$ID\") | .start_time" $manifest_path)
+    talk_end_time=$(yq eval --unwrapScalar ".program | .[] | select(.title==\"$ID\") | .end_time" $manifest_path)
     speaker_info_raw=$(curl -s "https://raw.githubusercontent.com/devopsdays/devopsdays-web/main/content/events/$YEAR-boston/speakers/$ID.md")
     speaker_bio=$(printf "$speaker_info_raw" | awk -v RS='^$' -v FS='\\+\\+\\+' '{ n = split($0, a); print a[3] }')
+    speaker_bio=$(trim "$speaker_bio")
     speaker_meta=$(printf "$speaker_info_raw" | awk -v RS='^$' -v FS='\\+\\+\\+' '{ n = split($0, a); print a[2] }')
     speaker_fullname=$(printf "$speaker_meta" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp," = ");
         if (nvp[1] ~ /Title*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
+    speaker_fullname=$(trim "$speaker_fullname")
     speaker_twitter=$(printf "$speaker_meta" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp," = ");
         if (nvp[1] ~ /twitter*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
@@ -38,7 +48,9 @@ for ID in $person_ids; do
     speaker_title=$(echo "$speaker_talk_raw" | awk -v RS='^$' -v FS='\n' '{ split($0, lines); for ( line in lines ) { split($line,nvp,": ");
           if (nvp[1] ~ /title*/) { sep = ""; for (i = 2; i <= length(nvp); i++) { print sep; print nvp[i]; sep = ": "; } }
     }}' | sed -e 's/^"//' -e 's/"$//')
+    speaker_title=$(trim "$speaker_title")
     speaker_abstract=$(echo "$speaker_talk_raw" | awk -v RS='^$' -v FS='\\-\\-\\-' '{ n = split($0, a); print a[3] }')
+    speaker_abstract=$(trim "$speaker_abstract")
 
     # echo Name:$speaker_fullname
     # echo Twitter:$speaker_twitter
@@ -64,8 +76,12 @@ permalink: /$YEAR/speakers/$ID
       .items[$INDEX].name = \"$speaker_fullname\" |
       .items[$INDEX].role = \"presenter\" |
       .items[$INDEX].bio = \"$speaker_bio\" |
+      .items[$INDEX].date = \"$talk_date\" |
+      .items[$INDEX].start_time = \"$talk_start_time\" |
+      .items[$INDEX].end_time = \"$talk_end_time\" |
       .items[$INDEX].title = \"$speaker_title\" |
-      .items[$INDEX].abstract = \"$speaker_abstract\"
+      .items[$INDEX].abstract = \"$speaker_abstract\" |
+      .. style=\"double\"
     """
     if [ "$speaker_website" ]; then
       yqstmt="""$yqstmt |
@@ -77,7 +93,7 @@ permalink: /$YEAR/speakers/$ID
       .items[$INDEX].handles.twitter = \"$speaker_twitter\"
       """
     fi
-    yq eval -P -i "$yqstmt" $DATA_PATH
+    yq eval -i "$yqstmt" $DATA_PATH
 
     INDEX=$(($INDEX + 1))
 done

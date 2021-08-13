@@ -1,179 +1,119 @@
 items:
-  - id: laura-santamaria
-    name: Laura Santamaria
-    role: presenter
-    bio: As a Developer Advocate at Pulumi, Laura Santamaria loves to learn and explain how things work, bridging the gaps in engineering disciplines. She is the curator for A Minute on the Mic and a cohost for The Hallway Track podcast. Apart from work, she co-hosts Austin DevOps and Cloud Austin, taught Python for Women Who Code Austin for many years, is an organizer for DevOpsDays Texas, is a program committee member for Open Source Summit, and volunteers with DevOpsDays Austin. Outside of tech, Laura runs, plays with her dogs, throws discs, and watches clouds—the real kind.
-    title: Communication and Empathy across Remote and Distributed Teams
-    abstract: |-
-      Over the past year and a half, the world went a bit sideways, and as a result, many companies went fully remote and are considering staying remote in some fashion. Some folks suddenly found themselves working remotely for the first time or working with teammates who have never worked remotely before, and that situation likely won’t change. However, working remotely means adopting different communication strategies and finding ways to empathize with coworkers without socializing or discussing things in person, and many folks still attempt to engage the same way as when they congregated in an office every day. The difficulties for remote and distributed teams around communication and empathy get even worse when tossing in high-emotion situations like incidents and being on-call.
-
-       Let’s explore:
-       * how communication and empathy across remote and distributed teams is different than for in-person teams,
-       * why these differences arise, and
-       * what teams and individuals can do to improve communication and to create and maintain empathy on remote teams, from using communication frameworks to helping others learn how to empathize with you.
-    website: https://nimbinatus.com/
+  - id: "laura-santamaria"
+    name: "Laura Santamaria"
+    role: "presenter"
+    bio: "As a Developer Advocate at Pulumi, Laura Santamaria loves to learn and explain how things work, bridging the gaps in engineering disciplines. She is the curator for A Minute on the Mic and a cohost for The Hallway Track podcast. Apart from work, she co-hosts Austin DevOps and Cloud Austin, taught Python for Women Who Code Austin for many years, is an organizer for DevOpsDays Texas, is a program committee member for Open Source Summit, and volunteers with DevOpsDays Austin. Outside of tech, Laura runs, plays with her dogs, throws discs, and watches clouds—the real kind."
+    date: "2021-09-27"
+    start_time: "09:20"
+    end_time: "09:50"
+    title: "Communication and Empathy across Remote and Distributed Teams"
+    abstract: "Over the past year and a half, the world went a bit sideways, and as a result, many companies went fully remote and are considering staying remote in some fashion. Some folks suddenly found themselves working remotely for the first time or working with teammates who have never worked remotely before, and that situation likely won’t change. However, working remotely means adopting different communication strategies and finding ways to empathize with coworkers without socializing or discussing things in person, and many folks still attempt to engage the same way as when they congregated in an office every day. The difficulties for remote and distributed teams around communication and empathy get even worse when tossing in high-emotion situations like incidents and being on-call. Let’s explore: generate.sh s-2021-speakers.yaml how communication and empathy across remote and distributed teams is different than for in-person teams, generate.sh s-2021-speakers.yaml why these differences arise, and generate.sh s-2021-speakers.yaml what teams and individuals can do to improve communication and to create and maintain empathy on remote teams, from using communication frameworks to helping others learn how to empathize with you."
+    website: "https://nimbinatus.com/"
     handles:
-      twitter: ninbinatus
-  - id: eric-smalling
-    name: Eric Smalling
-    role: presenter
-    bio: |-
-      **Senior Developer Advocate at Snyk**
-
-      Eric has over 25 years of professional experience in enterprise software development and architecture and has been practicing DevOps concepts since long before the term was coined. A continuous integration advocate and implementer for nearly a decade, a former Jenkins Ambassador, and a Docker user since the early days back in 2013.
-
-      A child of the ’80s and a second-generation software developer–his father was a SNOBOL coder in the 60s–Eric has been coding since his elementary school days bash on 8-bit machines. In his spare time, he enjoys spending time with his wife and kids, traveling, photography, and, of course, hacking on software.
-
-      Nowadays, Eric is a Senior Developer Advocate at [Snyk.io](https://snyk.io/) where he helps developers secure the applications, containers, and Kubernetes platforms they build and deploy to.
-
-      Eric is “@ericsmalling” on [Twitter](https://twitter.com/ericsmalling), [LinkedIn](https://www.linkedin.com/in/ericsmalling/) and [GitHub](https://github.com/ericsmalling).
-    title: So. Many. Vulnerabilities. Why are containers such a mess and what to do about it.
-    abstract: |-
-      What’s with all of these container image vulnerabilities? I’m a developer, not a security analyst! Whether you’re a solo dev or a large team embracing DevSecOps, join me to learn practices I’ve seen successful teams using to build safer container images & avoid the mistakes they made along the way.
-
-      If you’ve even run a vulnerability scan on a container you’ve probably seen it: the dreaded list with 100s, maybe even 1000s of issues on it. Containers have made life simpler in so many ways, but security sometimes doesn’t feel like one of them. So what can we do about it?
-
-      In this talk, I’ll share what I’ve learned working with users and companies and the best practices I’ve picked up along the way to builds safer container images. I’ll also share what not to do, because there are many rabbit holes you can go down that end up wasting time and energy.
-
-      I’ll share the processes and patterns that you can use whether you’re working on an individual project, or you’re part of a bigger team embracing DevSecOps.
-    website: https://snyk.io/blog
+      twitter: "ninbinatus"
+  - id: "eric-smalling"
+    name: "Eric Smalling"
+    role: "presenter"
+    bio: "**Senior Developer Advocate at Snyk** Eric has over 25 years of professional experience in enterprise software development and architecture and has been practicing DevOps concepts since long before the term was coined. A continuous integration advocate and implementer for nearly a decade, a former Jenkins Ambassador, and a Docker user since the early days back in 2013. A child of the ’80s and a second-generation software developer–his father was a SNOBOL coder in the 60s–Eric has been coding since his elementary school days bash on 8-bit machines. In his spare time, he enjoys spending time with his wife and kids, traveling, photography, and, of course, hacking on software. Nowadays, Eric is a Senior Developer Advocate at [Snyk.io](https://snyk.io/) where he helps developers secure the applications, containers, and Kubernetes platforms they build and deploy to. Eric is “@ericsmalling” on [Twitter](https://twitter.com/ericsmalling), [LinkedIn](https://www.linkedin.com/in/ericsmalling/) and [GitHub](https://github.com/ericsmalling)."
+    date: "2021-09-27"
+    start_time: "09:55"
+    end_time: "10:25"
+    title: "So. Many. Vulnerabilities. Why are containers such a mess and what to do about it."
+    abstract: "What’s with all of these container image vulnerabilities? I’m a developer, not a security analyst! Whether you’re a solo dev or a large team embracing DevSecOps, join me to learn practices I’ve seen successful teams using to build safer container images & avoid the mistakes they made along the way. If you’ve even run a vulnerability scan on a container you’ve probably seen it: the dreaded list with 100s, maybe even 1000s of issues on it. Containers have made life simpler in so many ways, but security sometimes doesn’t feel like one of them. So what can we do about it? In this talk, I’ll share what I’ve learned working with users and companies and the best practices I’ve picked up along the way to builds safer container images. I’ll also share what not to do, because there are many rabbit holes you can go down that end up wasting time and energy. I’ll share the processes and patterns that you can use whether you’re working on an individual project, or you’re part of a bigger team embracing DevSecOps."
+    website: "https://snyk.io/blog"
     handles:
-      twitter: ericsmalling
-  - id: shelby-spees
-    name: Shelby Spees
-    role: presenter
-    bio: |-
-      Shelby is a Developer Advocate at Honeycomb, where she helps developers better understand their services in production in order to deliver more business value. Before joining Honeycomb, Shelby worked on a number of applications as well as build pipelines, infrastructure, and other reliability efforts. She’s dedicated to improving access and equity in tech as well as to helping people feel good about their work.
-
-      Shelby lives in Los Angeles, CA, where she enjoys doing karaoke with her pitbull, Nova.
-    title: Shifting Left on Production Excellence with Observability
-    abstract: |-
-      My goal for this talk is to show DevOps practitioners and leaders what’s possible with next-generation observability tooling. Production should be for everyone, and there’s significant business risk in waiting to take these steps. Those risks come in the form of obvious pain like downtime as well as more insidious problems like attrition. And with rampant burnout across the industry, the way we currently operate production software is unsustainable.
-
-      Here’s a brief outline of what I plan to cover in the 30 minutes:
-
-      * intro - DevOps means production ownership. how to make it safe?
-      * what is production excellence?
-      * event-based service level objectives
-      * observability + progressive delivery
-      * next steps - how to bring observability to your org
-    website: https://honeycomb.io/shelby
+      twitter: "ericsmalling"
+  - id: "shelby-spees"
+    name: "Shelby Spees"
+    role: "presenter"
+    bio: "Shelby is a Developer Advocate at Honeycomb, where she helps developers better understand their services in production in order to deliver more business value. Before joining Honeycomb, Shelby worked on a number of applications as well as build pipelines, infrastructure, and other reliability efforts. She’s dedicated to improving access and equity in tech as well as to helping people feel good about their work. Shelby lives in Los Angeles, CA, where she enjoys doing karaoke with her pitbull, Nova."
+    date: "2021-09-27"
+    start_time: "10:30"
+    end_time: "11:00"
+    title: "Shifting Left on Production Excellence with Observability"
+    abstract: "My goal for this talk is to show DevOps practitioners and leaders what’s possible with next-generation observability tooling. Production should be for everyone, and there’s significant business risk in waiting to take these steps. Those risks come in the form of obvious pain like downtime as well as more insidious problems like attrition. And with rampant burnout across the industry, the way we currently operate production software is unsustainable. Here’s a brief outline of what I plan to cover in the 30 minutes: generate.sh s-2021-speakers.yaml intro - DevOps means production ownership. how to make it safe? generate.sh s-2021-speakers.yaml what is production excellence? generate.sh s-2021-speakers.yaml event-based service level objectives generate.sh s-2021-speakers.yaml observability + progressive delivery generate.sh s-2021-speakers.yaml next steps - how to bring observability to your org"
+    website: "https://honeycomb.io/shelby"
     handles:
-      twitter: shelbyspees
-  - id: mofizur-rahman
-    name: Mofizur Rahman
-    role: presenter
-    bio: |-
-      Mofizur Rahman (@moficodes) is a Developer Advocate at IBM. His area of interests include container orchestration and micro services. His favorite programming language these days is Go. He also tinkers with Node, Python and Java. He is also learning and teaching in the Go, Kubernetes, Docker and Microservice community. He is a strong believer of the power of open source and importance of giving back to the community. He is a self proclaimed sticker collecting addict and has collected several box full of stickers with no signs of stopping. He dabbles in photography sometimes.
-
-      He writes tech blogs sometimes which can be found on https://dev.to/moficodes.
-    title: "\nKubernetes\n: \nThe Second Week"
-    abstract: |-
-      Kubernetes is probably the de-facto container orchestrator for most people using container orchestrators. There is a huge demand for it as well as a lot of interest among people to learn Kubernetes. I like most people wanted to learn how it all worked. And don’t get me wrong the docs for Kubernetes are great. The community as a whole also created many tutorials, blog posts, videos books etc. But I still find something is missing. The intro tutorials are too basic sometimes. They are great if you want to learn the architecture of Kubernetes and how it all fits together. There are some real advance use case tutorials that dive deep in one aspect of K8s. But there is missing link.
-
-      I hope to help bridge that with this session. We will look at what I call second week of learning Kubernetes. You got the idea behind Kubernetes. You have played a bit with minikube. You have deployed the nginx server. But whats next?
-
-      We will talk about other lesser known but important features of k8s. We will tackle things like rollout, rollback, resource quotas, private image registry, continuous deployment and many more. You know, the second week stuff !!
-    website: https://dev.to/moficodes
+      twitter: "shelbyspees"
+  - id: "mofizur-rahman"
+    name: "Mofizur Rahman"
+    role: "presenter"
+    bio: "Mofizur Rahman (@moficodes) is a Developer Advocate at IBM. His area of interests include container orchestration and micro services. His favorite programming language these days is Go. He also tinkers with Node, Python and Java. He is also learning and teaching in the Go, Kubernetes, Docker and Microservice community. He is a strong believer of the power of open source and importance of giving back to the community. He is a self proclaimed sticker collecting addict and has collected several box full of stickers with no signs of stopping. He dabbles in photography sometimes. He writes tech blogs sometimes which can be found on https://dev.to/moficodes."
+    date: "2021-09-27"
+    start_time: "11:05"
+    end_time: "11:35"
+    title: "Kubernetes : The Second Week"
+    abstract: "Kubernetes is probably the de-facto container orchestrator for most people using container orchestrators. There is a huge demand for it as well as a lot of interest among people to learn Kubernetes. I like most people wanted to learn how it all worked. And don’t get me wrong the docs for Kubernetes are great. The community as a whole also created many tutorials, blog posts, videos books etc. But I still find something is missing. The intro tutorials are too basic sometimes. They are great if you want to learn the architecture of Kubernetes and how it all fits together. There are some real advance use case tutorials that dive deep in one aspect of K8s. But there is missing link. I hope to help bridge that with this session. We will look at what I call second week of learning Kubernetes. You got the idea behind Kubernetes. You have played a bit with minikube. You have deployed the nginx server. But whats next? We will talk about other lesser known but important features of k8s. We will tackle things like rollout, rollback, resource quotas, private image registry, continuous deployment and many more. You know, the second week stuff !!"
+    website: "https://dev.to/moficodes"
     handles:
-      twitter: moficodes
-  - id: angel-rivera
-    name: Angel Rivera
-    role: presenter
-    bio: |-
-      Angel started his career as an US Air Force Space Systems Operations specialist in Cape Canaveral AF Station where he realized his passion for technology and software development. He has extensive experience in the private, public and military sectors and his technical experience includes military/space lift operations, technical writing, software development, SRE/DevOPs engineering. He also has a wealth of experience in defense and federal sectors such as contracting, information systems security and management.
-
-      You can usually find him speaking at or organizing local tech meetups and hackathons where he enjoys engaging with developers.
-
-      Angel’s passions are positive disruption, learning, teaching, mentoring but most of all inspiring all forms of technologists & building awesome tech communities.
-    title: Are your CI/CD Pipelines Secure?
-    abstract: |-
-      Most CI/CD pipelines used by DevOps teams utilize integrations with services such as APIs, databases and other critical systems to complete their workflows. These integrations usually required the use of extremely sensitive secrets such as passwords, tokens or certificates and must be securely protected at all times. Unauthorized access of these pipeline secrets open these systems to threats from bad actors and illegal access of data.
-
-      In this talk Angel will discuss common pain points in properly securing applications, CI/CD pipelines and protecting sensitive access gates to integration targets. Attendees will learn strategies to secure their applications, sensitive data and pipeline integration points. Attendees will leave with a better understanding of how to implement security layers that can improve their pipeline security posture.
-    website: http://pwl.angelrivera.com/
+      twitter: "moficodes"
+  - id: "angel-rivera"
+    name: "Angel Rivera"
+    role: "presenter"
+    bio: "Angel started his career as an US Air Force Space Systems Operations specialist in Cape Canaveral AF Station where he realized his passion for technology and software development. He has extensive experience in the private, public and military sectors and his technical experience includes military/space lift operations, technical writing, software development, SRE/DevOPs engineering. He also has a wealth of experience in defense and federal sectors such as contracting, information systems security and management. You can usually find him speaking at or organizing local tech meetups and hackathons where he enjoys engaging with developers. Angel’s passions are positive disruption, learning, teaching, mentoring but most of all inspiring all forms of technologists & building awesome tech communities."
+    date: "2021-09-27"
+    start_time: "11:40"
+    end_time: "12:10"
+    title: "Are your CI/CD Pipelines Secure?"
+    abstract: "Most CI/CD pipelines used by DevOps teams utilize integrations with services such as APIs, databases and other critical systems to complete their workflows. These integrations usually required the use of extremely sensitive secrets such as passwords, tokens or certificates and must be securely protected at all times. Unauthorized access of these pipeline secrets open these systems to threats from bad actors and illegal access of data. In this talk Angel will discuss common pain points in properly securing applications, CI/CD pipelines and protecting sensitive access gates to integration targets. Attendees will learn strategies to secure their applications, sensitive data and pipeline integration points. Attendees will leave with a better understanding of how to implement security layers that can improve their pipeline security posture."
+    website: "http://pwl.angelrivera.com/"
     handles:
-      twitter: punkdata
-  - id: michael-miles
-    name: Michael Miles
-    role: presenter
-    bio: I am passionate about development and working with the latest open source technologies. I have been working in web engineering since 2003, utilizing various languages and frameworks. As the Director of Web Development at MIT Sloan, I lead the development, maintenance and growth of the digital properties for the school, as well as, the development team that supports them. I am also the host of the podcast Developing Up, which is focused on career growth and the non-technical side of being a developer.
-    title: Preventing Developer Burnout
-    abstract: |-
-      All professionals deal with challenging, high-stress and/or high-pressure situations. Everyone has their limits, and too much stress or pressure can lead to “burnout,” a state of physical and emotional exhaustion. Burnout takes its toll not only on the individual but also co-workers, team, friends, and family. By working together, individuals and managers can avoid burnout.
-
-      This session explores the dangers of burnout and the negative impact it has on teams and individuals. We will review the three main types of burnout: Frenetic, Under-Challenged, and Worn-Out. Attendees will walk away with the ability to identify, treat, and prevent burnout in themselves and others.
-    website: http://www.mike-miles.com/
+      twitter: "punkdata"
+  - id: "michael-miles"
+    name: "Michael Miles"
+    role: "presenter"
+    bio: "I am passionate about development and working with the latest open source technologies. I have been working in web engineering since 2003, utilizing various languages and frameworks. As the Director of Web Development at MIT Sloan, I lead the development, maintenance and growth of the digital properties for the school, as well as, the development team that supports them. I am also the host of the podcast Developing Up, which is focused on career growth and the non-technical side of being a developer."
+    date: "2021-09-28"
+    start_time: "09:20"
+    end_time: "09:50"
+    title: "Preventing Developer Burnout"
+    abstract: "All professionals deal with challenging, high-stress and/or high-pressure situations. Everyone has their limits, and too much stress or pressure can lead to “burnout,” a state of physical and emotional exhaustion. Burnout takes its toll not only on the individual but also co-workers, team, friends, and family. By working together, individuals and managers can avoid burnout. This session explores the dangers of burnout and the negative impact it has on teams and individuals. We will review the three main types of burnout: Frenetic, Under-Challenged, and Worn-Out. Attendees will walk away with the ability to identify, treat, and prevent burnout in themselves and others."
+    website: "http://www.mike-miles.com/"
     handles:
-      twitter: mikemiles86
-  - id: ben-ellerby
-    name: Ben Ellerby
-    role: presenter
-    bio: AWS Serverless Hero & VP of Engineering at Theodo, working with startups to launch MVP’s and large corporates to deliver in startup speed. Editor of Serverless Transformation (blog, podcast and newsletter). Serverless London Meetup Organiser
-    title: Load Testing AWS Serverless Architectures with Serverless
-    abstract: |-
-      Serverless architectures on AWS, involving services like AWS Lambda, DynamoDB, Cognito, Step Functions, API Gateway, bring instant scalability when built and configured in the correct way. We’ll look at how AWS Serverless architectures need to be treated differently to ensure optimal scalability and how Serverless tools (like Serverless Artillery) can be used to verify scalability.
-
-      Not only will we look at achieving scalability, we’ll also look at the tools and techniques to predict and limit the cost of scaling. To bring these topics to life we’ll look at the architecture of 2 live Serverless applications built on AWS for scale and discuss how they were architected, how costs were monitored and kept in line and how serverless load testing was used to verify scalability and catch edge cases.
+      twitter: "mikemiles86"
+  - id: "ben-ellerby"
+    name: "Ben Ellerby"
+    role: "presenter"
+    bio: "AWS Serverless Hero & VP of Engineering at Theodo, working with startups to launch MVP’s and large corporates to deliver in startup speed. Editor of Serverless Transformation (blog, podcast and newsletter). Serverless London Meetup Organiser"
+    date: "2021-09-28"
+    start_time: "09:55"
+    end_time: "10:25"
+    title: "Load Testing AWS Serverless Architectures with Serverless"
+    abstract: "Serverless architectures on AWS, involving services like AWS Lambda, DynamoDB, Cognito, Step Functions, API Gateway, bring instant scalability when built and configured in the correct way. We’ll look at how AWS Serverless architectures need to be treated differently to ensure optimal scalability and how Serverless tools (like Serverless Artillery) can be used to verify scalability. Not only will we look at achieving scalability, we’ll also look at the tools and techniques to predict and limit the cost of scaling. To bring these topics to life we’ll look at the architecture of 2 live Serverless applications built on AWS for scale and discuss how they were architected, how costs were monitored and kept in line and how serverless load testing was used to verify scalability and catch edge cases."
     handles:
-      twitter: EllerbyBen
-  - id: chris-riley
-    name: Chris Rley
-    role: presenter
-    bio: |-
-      Chris Riley (@hoardingio) is obsessed with bringing modern technologies to those who need to solve real-world problems, going from unicorn to reality.
-
-      Chris speaks and engages with end-users regularly in the areas of DevOps, SecOps, and App Dev. He works for Splunk as a Tech Advocate and is a regular contributor to industry blogs such as ContainerJournal.com, DevOps.com and Sweetcode.io. He is also the host of the podcast, Developers Eating the World.
-
-      As a bad-coder-turned-technology-advocate, Chris understands the challenges and needs of modern engineers, as well as how technology fits into the broader business goals of companies in a demanding high-tech world.
-
-      Chris obtained his Computer Science and Business degrees from Regis University in Colorado and currently lives in Colorado with his wife and two daughters. He is a fan of physics and psychology, and has an eclectic set of hobbies that range from Genetic Algorithms (GA) to Mineral Collecting to LEGO.
-    title: The Life of On-Call, how SRE is changing DevOps
-    abstract: |-
-      Google did it again. They gave us another buzzword that is changing how organizations operate. Site Reliability Engineer (SRE) is both a strategy and in some organizations brand new function that helps complete the DevOps lifecycle. In this session we will talk about how the SRE function is changing the way organizations think about on-call and completing the DevOps feedback loop from prod to plan. We will cover:
-
-      1. The rise of the SRE role
-      2. How the SRE function is not rooted in monitoring and ops anymore
-      3. How high-performing teams are leveraging SRE to advance their delivery chain
-      4. What modern on-call looks like
-      5. Best practices and Considerations
-
-      If you are in IT operations, development, SRE or DevOps this talk will help frame the overall objectives and responsibilities of the SRE function, and new ways to approach on-call.
+      twitter: "EllerbyBen"
+  - id: "chris-riley"
+    name: "Chris Rley"
+    role: "presenter"
+    bio: "Chris Riley (@hoardingio) is obsessed with bringing modern technologies to those who need to solve real-world problems, going from unicorn to reality. Chris speaks and engages with end-users regularly in the areas of DevOps, SecOps, and App Dev. He works for Splunk as a Tech Advocate and is a regular contributor to industry blogs such as ContainerJournal.com, DevOps.com and Sweetcode.io. He is also the host of the podcast, Developers Eating the World. As a bad-coder-turned-technology-advocate, Chris understands the challenges and needs of modern engineers, as well as how technology fits into the broader business goals of companies in a demanding high-tech world. Chris obtained his Computer Science and Business degrees from Regis University in Colorado and currently lives in Colorado with his wife and two daughters. He is a fan of physics and psychology, and has an eclectic set of hobbies that range from Genetic Algorithms (GA) to Mineral Collecting to LEGO."
+    date: "2021-09-28"
+    start_time: "10:30"
+    end_time: "11:00"
+    title: "The Life of On-Call, how SRE is changing DevOps"
+    abstract: "Google did it again. They gave us another buzzword that is changing how organizations operate. Site Reliability Engineer (SRE) is both a strategy and in some organizations brand new function that helps complete the DevOps lifecycle. In this session we will talk about how the SRE function is changing the way organizations think about on-call and completing the DevOps feedback loop from prod to plan. We will cover: 1. The rise of the SRE role 2. How the SRE function is not rooted in monitoring and ops anymore 3. How high-performing teams are leveraging SRE to advance their delivery chain 4. What modern on-call looks like 5. Best practices and Considerations If you are in IT operations, development, SRE or DevOps this talk will help frame the overall objectives and responsibilities of the SRE function, and new ways to approach on-call."
     handles:
-      twitter: hoardinginfo
-  - id: anurag-gupta
-    name: Anurag Gupta
-    role: presenter
-    bio: |2-
-      Prior to Shoreline, I spent 7.5 years at Amazon Web Services (AWS), where I ran their analytic and relational database services. Within analytics, this included Athena, Data Pipeline, EMR, Glue, LakeFormation, Managed Blockchain, and Redshift. Within relational databases, these were Aurora for MySQL and PostgreSQL and RDS for MariaDB, MySQL, Oracle, PostgreSQL, and SQL Server. Managing services deployed on millions of nodes while ticketing on a per-instance basis taught me the importance of distributed control and automation.
-    title: "\nRestarts and rollbacks don't fix everything\n: \nAutomating Day 2 Operations"
-    abstract: |2-
-      As our systems grow exponentially larger and more complex, the challenge DevOps and SREs face to keep production systems online also grows. In order to get ahead of ticket queues and improve availability, there’s an imperative for us to automate remediation of issues entirely. This is more attainable than most people realize because while the causes of an incident may be in the thousands, the number of remediations is usually small and consistent.
-
-      In this session, I’ll describe real outages I saw at AWS, group them into their common infrastructure resolutions, and describe how we built speculative, automated resolutions that reduced tickets, improved availability, and reduced costs while growing our fleet 1000x. You’ll walk away with concrete ideas that you can put into place to improve availability and reduce burnout.
-    website: https://shoreline.io
+      twitter: "hoardinginfo"
+  - id: "anurag-gupta"
+    name: "Anurag Gupta"
+    role: "presenter"
+    bio: "Prior to Shoreline, I spent 7.5 years at Amazon Web Services (AWS), where I ran their analytic and relational database services. Within analytics, this included Athena, Data Pipeline, EMR, Glue, LakeFormation, Managed Blockchain, and Redshift. Within relational databases, these were Aurora for MySQL and PostgreSQL and RDS for MariaDB, MySQL, Oracle, PostgreSQL, and SQL Server. Managing services deployed on millions of nodes while ticketing on a per-instance basis taught me the importance of distributed control and automation."
+    date: "2021-09-28"
+    start_time: "11:05"
+    end_time: "11:35"
+    title: "Restarts and rollbacks don't fix everything : Automating Day 2 Operations"
+    abstract: "As our systems grow exponentially larger and more complex, the challenge DevOps and SREs face to keep production systems online also grows. In order to get ahead of ticket queues and improve availability, there’s an imperative for us to automate remediation of issues entirely. This is more attainable than most people realize because while the causes of an incident may be in the thousands, the number of remediations is usually small and consistent. In this session, I’ll describe real outages I saw at AWS, group them into their common infrastructure resolutions, and describe how we built speculative, automated resolutions that reduced tickets, improved availability, and reduced costs while growing our fleet 1000x. You’ll walk away with concrete ideas that you can put into place to improve availability and reduce burnout."
+    website: "https://shoreline.io"
     handles:
-      twitter: awgupta
-  - id: josh-stella
-    name: |2-
-      Josh Stella
-    role: presenter
-    bio: |2-
-
-      Josh Stella is the CEO of a SaaS Cloud Security company. He educates cloud and security professionals about cloud misconfiguration exploits and how to keep cloud infrastructure secure from attackers—often by demonstrating exploits in real time as a white hat hacker.
-
-      Previously, Josh was a Principal Solutions Architect at a major cloud provider, where he supported customers in the area of national security. Josh also served as CTO for a technology startup and in numerous other IT leadership and technical roles over the past 25 years. HIs areas Of expertise include: White Hat Hacking, AWS, Cloud Architecture, Cloud Security, Distributed Systems, Open Policy Agent (OPA)
-    title: |2-
-      Blowing Up Serverless Security with IAM (And How to Avoid It)
-    abstract: |2-
-
-      Josh will dig into the role IAM plays with serverless security, how IAM misconfigurations put data at risk, and why these mistakes are so easy to make and common in enterprise cloud environments.
-
-      This session will cover:
-
-      * The IAM attack surface with serverless cloud environments
-      * The strategies hackers use to exploit IAM misconfigurations
-      * How to spot these mistakes and eliminate them
+      twitter: "awgupta"
+  - id: "josh-stella"
+    name: "Josh Stella"
+    role: "presenter"
+    bio: "Josh Stella is the CEO of a SaaS Cloud Security company. He educates cloud and security professionals about cloud misconfiguration exploits and how to keep cloud infrastructure secure from attackers—often by demonstrating exploits in real time as a white hat hacker. Previously, Josh was a Principal Solutions Architect at a major cloud provider, where he supported customers in the area of national security. Josh also served as CTO for a technology startup and in numerous other IT leadership and technical roles over the past 25 years. HIs areas Of expertise include: White Hat Hacking, AWS, Cloud Architecture, Cloud Security, Distributed Systems, Open Policy Agent (OPA)"
+    date: "2021-09-28"
+    start_time: "11:40"
+    end_time: "12:10"
+    title: "Blowing Up Serverless Security with IAM (And How to Avoid It)"
+    abstract: "Josh will dig into the role IAM plays with serverless security, how IAM misconfigurations put data at risk, and why these mistakes are so easy to make and common in enterprise cloud environments. This session will cover: generate.sh s-2021-speakers.yaml The IAM attack surface with serverless cloud environments generate.sh s-2021-speakers.yaml The strategies hackers use to exploit IAM misconfigurations generate.sh s-2021-speakers.yaml How to spot these mistakes and eliminate them"
     website: |2-
       https://www.fugue.co/
     handles:

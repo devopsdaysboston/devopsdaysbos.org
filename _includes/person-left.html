@@ -19,9 +19,7 @@
 {% endif %}
     </div>
   <p style="font-size:1.5em;">{{ person.name }}<br /><span style="text-transform: uppercase;">{{ person.role }}</span></p>
-  <div class="flexbox">
-    <a class="flexbox-button" href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session</a>
-  </div>
+  <a href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session</a>
   {% if content.size > 0 %}
     {{ content }}
   {% endif %}
