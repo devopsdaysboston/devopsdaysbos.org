@@ -4,7 +4,7 @@
 {% assign socialcard = person.id %}
 {% assign content = content | markdownify | strip %}
 {% if include.socialcard %}{% assign socialcard = include.socialcard %}{% endif %}
-{% assign headfakesocialcard = false %}
+{% assign headfakesocialcard = true %}
 <div style="min-width:200px;width:25%;margin:2em;float:left;text-align:center;align-self:flex-start;">
   <img id="speaker-thumb" src="/assets/{{ addpath }}images/speakers/socials/{{ socialcard }}.jpg"
         style="width:100%;border-radius:1em;{%- if headfakesocialcard == true -%}visibility:hidden;{%- endif -%}"
