@@ -4,9 +4,10 @@
 {% assign socialcard = person.id %}
 {% assign content = content | markdownify | strip %}
 {% if include.socialcard %}{% assign socialcard = include.socialcard %}{% endif %}
+{% assign headfakesocialcard = false %}
 <div style="min-width:200px;width:25%;margin:2em;float:left;text-align:center;align-self:flex-start;">
   <img id="speaker-thumb" src="/assets/{{ addpath }}images/speakers/socials/{{ socialcard }}.jpg"
-        style="width:100%;border-radius:2em;visibility:hidden;"
+        style="width:100%;border-radius:1em;{%- if headfakesocialcard == true -%}visibility:hidden;{%- endif -%}"
         title="{{ person.name }}: {{ person.title }}" />
     <div class="flexbox" style="margin:0.5em;">
 {% if person.handles %}
@@ -24,6 +25,7 @@
     {{ content }}
   {% endif %}
 </div>
+{% if headfakesocialcard == true %}
 <script type="text/javascript">
   window.onloadqueue=(window.onloadqueue||[]).concat([function () {
     $('#speaker-thumb').attr('src','/assets/{{ addpath }}images/speakers/thumbs/{{ person.id }}.jpeg').css({'border-radius':'50%'})
@@ -32,3 +34,4 @@
     }
   }]);
 </script>
+{% endif %}
