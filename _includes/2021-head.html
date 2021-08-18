@@ -1,28 +1,28 @@
-  {% assign is_presenter_page=false %}
-  {% if page.permalink %}
-    {% if page.permalink contains "/speakers/" %}
-      {% assign is_presenter_page=true %}
-    {% endif %}
+{% assign addpath = "2021/" %}
+{% assign is_presenter_page=false %}
+{% if page.permalink %}
+  {% if page.permalink contains "/speakers/" %}
+    {% assign is_presenter_page=true %}
   {% endif %}
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@{{ site.twitter_username }}">
-  <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  {% assign is_bannerable_page=false %}
-  {% if is_presenter_page == true %}
-    {% assign speaker = site.data.s-2021-speakers.items | where_exp:"item", "item.id == page.id" | first %}
-    {% if speaker %}
-      {% assign is_bannerable_page=true %}
-      <meta name="twitter:title" content="{{ speaker.name }} at {{ site.event_short_title }} {{ site.current_event.dates }}">
-      <meta name="twitter:description" content="{{ speaker.bio }}">
-      <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.jpg">
-      <meta name="og:description" content="{{ speaker.bio }}">
-      <meta name="og:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.jpg">
-    {% endif %}
+{% endif %}
+{% capture social_title %}{{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+{% capture social_description %}{{ speaker.bio }}{% endcapture %}
+{% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/speakers/socials/everyone.jpg{% endcapture %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
+{% assign is_bannerable_page=false %}
+{% if is_presenter_page == true %}
+  {% assign speaker = site.data.s-2021-speakers.items | where_exp:"item", "item.id == page.id" | first %}
+  {% if speaker %}
+    {% assign is_bannerable_page=true %}
+    {% capture social_title %}{{ speaker.name }} at {{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+    {% capture social_description %}{{ speaker.bio }}{% endcapture %}
+    {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/speakers/socials/{{ speaker.id }}.jpg{% endcapture %}
   {% endif %}
-  {% if is_bannerable_page == false %}
-      <meta name="twitter:title" content="{{ site.event_short_title }} {{ site.current_event.dates }}">
-      <meta name="twitter:description" content="{{ site.description }}">
-      <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/everyone.jpg">
-      <meta name="og:description" content="{{ site.description }}">
-      <meta name="og:image" content="{{ site.produrl }}/assets/images/speakers/socials/everyone.jpg">
-  {% endif %}
+{% endif %}
+<meta name="twitter:title" content="{{ social_title }}">
+<meta name="twitter:description" content="{{ social_description }}">
+<meta name="twitter:image" content="{{ social_image }}">
+<meta name="og:description" content="{{ social_description }}">
+<meta name="og:image" content="{{ social_image }}">
