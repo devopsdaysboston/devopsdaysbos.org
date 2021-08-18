@@ -65,6 +65,8 @@ for ID in $person_ids; do
 layout: s-$YEAR-speaker
 id: $ID
 permalink: /$YEAR/speakers/$ID
+title: \"$speaker_fullname at DevOpsDays Boston $YEAR\"
+description: \"$speaker_title\"
 ---
     """ > $PAGE_PATH
 
