@@ -1,30 +1,23 @@
-  {% assign is_a_speakers_or_panelists_page=false %}
-  {% assign is_panel_page=false %}
+  {% assign is_presenter_page=false %}
   {% if page.permalink %}
-    {% if page.permalink contains "/speakers/" or page.permalink contains "/panelists/" %}
-      {% assign is_a_speakers_or_panelists_page=true %}
-    {% else %}
-      {% if page.permalink contains "/panel" %}
-        {% assign is_panel_page=true %}
-      {% endif %}
+    {% if page.permalink contains "/speakers/" %}
+      {% assign is_presenter_page=true %}
     {% endif %}
   {% endif %}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@{{ site.twitter_username }}">
   <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  {% if is_a_speakers_or_panelists_page == true or is_panel_page == true %}
-    {% assign is_bannerable_page=false %}
+  {% assign is_bannerable_page=false %}
+  {% if is_presenter_page == true %}
     {% assign speaker = site.data.s-2021-speakers.items | where_exp:"item", "item.id == page.id" | first %}
-    {% if speaker and speaker.role != "panelist" %}
+    {% if speaker %}
+      {% assign is_bannerable_page=true %}
       <meta name="twitter:title" content="{{ speaker.name }} at {{ site.event_short_title }} {{ site.current_event.dates }}">
-      <meta name="twitter:description" content="{{ page.title }}: {{ speaker.bio }}">
+      <meta name="twitter:description" content="{{ speaker.bio }}">
       <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.png">
-    {% else %}
-      <meta name="twitter:title" content="{{ site.data.s-2021-panel.title }}">
-      <meta name="twitter:description" content="{{ site.data.s-2021-panel.description }}">
-      <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/panel.png">
     {% endif %}
-  {% else %}
+  {% endif %}
+  {% if is_bannerable_page == false %}
       <meta name="twitter:title" content="{{ site.event_short_title }} {{ site.current_event.dates }}">
       <meta name="twitter:description" content="{{ site.description }}">
       <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/everyone.png">
