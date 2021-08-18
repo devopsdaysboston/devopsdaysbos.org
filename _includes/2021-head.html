@@ -15,10 +15,14 @@
       <meta name="twitter:title" content="{{ speaker.name }} at {{ site.event_short_title }} {{ site.current_event.dates }}">
       <meta name="twitter:description" content="{{ speaker.bio }}">
       <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.jpg">
+      <meta name="og:description" content="{{ speaker.bio }}">
+      <meta name="og:image" content="{{ site.produrl }}/assets/images/speakers/socials/{{ speaker.id }}.jpg">
     {% endif %}
   {% endif %}
   {% if is_bannerable_page == false %}
       <meta name="twitter:title" content="{{ site.event_short_title }} {{ site.current_event.dates }}">
       <meta name="twitter:description" content="{{ site.description }}">
       <meta name="twitter:image" content="{{ site.produrl }}/assets/images/speakers/socials/everyone.jpg">
+      <meta name="og:description" content="{{ site.description }}">
+      <meta name="og:image" content="{{ site.produrl }}/assets/images/speakers/socials/everyone.jpg">
   {% endif %}
