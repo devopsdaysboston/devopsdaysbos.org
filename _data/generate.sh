@@ -11,8 +11,10 @@ fi
 work_dir=../temp
 mkdir -p $work_dir
 manifest_path=$work_dir/manifest.yaml
+welcome_html_path=$work_dir/welcome.html
 
 curl -s "https://raw.githubusercontent.com/devopsdays/devopsdays-web/main/data/events/$YEAR-boston.yml" -o "$manifest_path"
+curl -s "https://devopsdays.org/events/$YEAR-boston/welcome/" -o "$welcome_html_path"
 
 DATA_PATH=../_data/s-$YEAR-speakers.yaml
 
@@ -23,6 +25,40 @@ function trim() {
   local ret=`echo $1 | sed -e 's/^[[:space:]]*//'`
   echo "$ret"
 }
+
+mkdir -p ../_pages/${YEAR}/speakers/
+mkdir -p ../_pages/${YEAR}/sponsors/
+
+
+sponsor_ids=$(yq eval -j '.sponsors' $manifest_path | jq --raw-output '.[] | .id')
+for ID in $sponsor_ids; do
+  sponsor_level=$(yq eval --unwrapScalar ".sponsors | .[] | select(.id==\"$ID\") | .level" $manifest_path)
+  sponsor_level_text=$(yq eval --unwrapScalar ".sponsor_levels | .[] | select(.id==\"$sponsor_level\") | .label" $manifest_path)
+  sponsor_logo=$(xmllint --html --nowarning -xpath "string(//img[contains(@src,'/sponsors/$ID.png')]/@src)" $welcome_html_path 2>/dev/null )
+  sponsor_title=$(xmllint --html --nowarning -xpath "string(//img[contains(@src,'/sponsors/$ID.png')]/@title)" $welcome_html_path 2>/dev/null )
+  sponsor_link=$(xmllint --html --nowarning -xpath "string(//img[contains(@src,'/sponsors/$ID.png')]/parent::a/@href)" $welcome_html_path 2>/dev/null )
+  echo "Sponsor $ID; $sponsor_title"
+  echo "$sponsor_link"
+
+  PAGE_PATH=../_pages/${YEAR}/sponsors/${ID}.markdown
+
+  echo """---
+layout: s-$YEAR-sponsor
+id: $ID
+permalink: /$YEAR/sponsors/$ID
+title: \"$sponsor_title at DevOpsDays Boston $YEAR\"
+description: \"$sponsor_title at DevOpsDays Boston $YEAR\"
+sponsor_id: \"$ID\"
+sponsor_name: \"$sponsor_title\"
+sponsor_link: \"$sponsor_link\"
+sponsor_level: \"$sponsor_level_text\"
+sponsor_logo: \"$sponsor_logo\"
+sponsor_social: \"$sponsor_social\"
+---
+  """ > $PAGE_PATH
+
+done
+
 
 person_ids=$(yq eval -j '.program' $manifest_path | jq --raw-output '.[] | select(.type=="talk") | .title')
 for ID in $person_ids; do
@@ -61,6 +97,8 @@ for ID in $person_ids; do
 
     PAGE_PATH=../_pages/${YEAR}/speakers/${ID}.markdown
 
+    echo "Speaker $INDEX; $speaker_fullname; $speaker_title"
+
     echo """---
 layout: s-$YEAR-speaker
 id: $ID
@@ -69,9 +107,6 @@ title: \"$speaker_fullname at DevOpsDays Boston $YEAR\"
 description: \"$speaker_title\"
 ---
     """ > $PAGE_PATH
-
-    echo $INDEX
-    echo $speaker_title
 
     yqstmt="""
       .items[$INDEX].id = \"$ID\" |
@@ -99,6 +134,7 @@ description: \"$speaker_title\"
 
     INDEX=$(($INDEX + 1))
 done
+
 
 # echo "$DATA_CONTENTS" > $DATA_PATH
 
