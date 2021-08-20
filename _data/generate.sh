@@ -50,7 +50,7 @@ for ID in $person_ids; do
     }}' | sed -e 's/^"//' -e 's/"$//')
     speaker_title=$(trim "$speaker_title")
     speaker_abstract=$(echo "$speaker_talk_raw" | awk -v RS='^$' -v FS='\\-\\-\\-' '{ n = split($0, a); print a[3] }')
-    speaker_abstract=$(trim "$speaker_abstract")
+    # speaker_abstract=$(trim "$speaker_abstract")
 
     # echo Name:$speaker_fullname
     # echo Twitter:$speaker_twitter
