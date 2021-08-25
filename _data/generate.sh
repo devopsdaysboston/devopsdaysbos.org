@@ -16,11 +16,6 @@ welcome_html_path=$work_dir/welcome.html
 curl -s "https://raw.githubusercontent.com/devopsdays/devopsdays-web/main/data/events/$YEAR-boston.yml" -o "$manifest_path"
 curl -s "https://devopsdays.org/events/$YEAR-boston/welcome/" -o "$welcome_html_path"
 
-DATA_PATH=../_data/s-$YEAR-speakers.yaml
-
-echo "items: []" > $DATA_PATH
-INDEX=0
-
 function trim() {
   local ret=`echo $1 | sed -e 's/^[[:space:]]*//'`
   echo "$ret"
@@ -29,6 +24,9 @@ function trim() {
 mkdir -p ../_pages/${YEAR}/speakers/
 mkdir -p ../_pages/${YEAR}/sponsors/
 
+DATA_PATH=../_data/s-$YEAR-sponsors.yaml
+echo "items: []" > $DATA_PATH
+INDEX=0
 
 sponsor_ids=$(yq eval -j '.sponsors' $manifest_path | jq --raw-output '.[] | .id')
 for ID in $sponsor_ids; do
@@ -57,8 +55,23 @@ sponsor_social: \"$sponsor_social\"
 ---
   """ > $PAGE_PATH
 
+  yqstmt="""
+    .items[$INDEX].id = \"$ID\" |
+    .items[$INDEX].name = \"$sponsor_title\" |
+    .items[$INDEX].sponsor_logo = \"$sponsor_logo\" |
+    .. style=\"double\"
+  """
+
+  yq eval -i "$yqstmt" $DATA_PATH
+
+  INDEX=$(($INDEX + 1))
+
 done
 
+
+DATA_PATH=../_data/s-$YEAR-speakers.yaml
+echo "items: []" > $DATA_PATH
+INDEX=0
 
 person_ids=$(yq eval -j '.program' $manifest_path | jq --raw-output '.[] | select(.type=="talk") | .title')
 for ID in $person_ids; do

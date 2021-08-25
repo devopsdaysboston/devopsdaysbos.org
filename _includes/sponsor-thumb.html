@@ -1,0 +1,5 @@
+{% assign sponsor = include.sponsor %}
+{% assign addpath = include.addpath %}
+<div style="max-width:125px;min-height:230px;text-align:center;margin:1em;">
+  <a href="/{{ addpath }}sponsors/{{ sponsor.id }}"><img src="{{ sponsor.sponsor_logo }}" title="{{ sponsor.name }}"></a>
+</div>

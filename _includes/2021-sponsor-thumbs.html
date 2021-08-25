@@ -1,0 +1,8 @@
+<div class="flexbox">
+  {% assign addpath = "2021/" %}
+  {% assign sponsors = site.data.s-2021-sponsors.items %}
+  {% for sponsor in sponsors %}
+    {% include sponsor-thumb.html sponsor=sponsor addpath=addpath %}
+  {% endfor %}
+</div>
+<div style="clear:both;width:100%;"></div>

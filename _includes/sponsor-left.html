@@ -1,0 +1,27 @@
+{% assign addpath = include.addpath %}
+{% assign id = page.sponsor_id %}
+{% assign logo = page.sponsor_logo %}
+{% assign headfakesocialcard = true %}
+
+{% assign cta_link = page.sponsor_link %}
+{% assign cta_link = site.grandparent_site %}
+{% assign cta_link = site.registration.direct_link %}
+
+<div style="min-width:200px;width:25%;margin:2em;float:left;text-align:center;align-self:flex-start;">
+  <a href="{{ cta_link }}" target="_blank">
+    <img id="sponsor-thumb" src="/assets/{{ addpath }}images/sponsors/socials/{{ page.sponsor_id }}.jpg"
+          style="width:100%;border-radius:1em;{%- if headfakesocialcard == true -%}visibility:hidden;{%- endif -%}"
+          title="{{ person.name }}: {{ person.title }}" />
+    <p style="font-size:1.5em;"><span style="text-transform: uppercase;">{{ page.sponsor_level }}</span><br />Sponsor</p>
+  </a>
+</div>
+{% if headfakesocialcard == true %}
+<script type="text/javascript">
+  window.onloadqueue=(window.onloadqueue||[]).concat([function () {
+    $('#sponsor-thumb').attr('src','{{ page.sponsor_logo }}').css({'border-radius':'1em'})
+    [0].onload=function() {
+      $(this).css({'visibility':'visible'})
+    }
+  }]);
+</script>
+{% endif %}
