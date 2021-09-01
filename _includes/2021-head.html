@@ -1,8 +1,12 @@
 {% assign addpath = "2021/" %}
 {% assign is_presenter_page=false %}
+{% assign is_sponsor_page=false %}
 {% if page.permalink %}
   {% if page.permalink contains "/speakers/" %}
     {% assign is_presenter_page=true %}
+  {% endif %}
+  {% if page.permalink contains "/sponsors/" %}
+    {% assign is_sponsor_page=true %}
   {% endif %}
 {% endif %}
 {% capture social_title %}{{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
@@ -12,6 +16,11 @@
 <meta name="twitter:site" content="@{{ site.twitter_username }}">
 <meta name="twitter:creator" content="@{{ site.twitter_username }}">
 {% assign is_bannerable_page=false %}
+{% if is_sponsor_page == true %}
+  {% capture social_title %}{{ page.sponsor_name }} at {{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+  {% capture social_description %}{% endcapture %}
+  {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/sponsors/socials/{{ page.id }}.jpeg{% endcapture %}
+{% endif %}
 {% if is_presenter_page == true %}
   {% assign speaker = site.data.s-2021-speakers.items | where_exp:"item", "item.id == page.id" | first %}
   {% if speaker %}
