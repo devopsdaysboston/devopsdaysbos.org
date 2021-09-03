@@ -1,3 +1,4 @@
+\nitems: []
 items:
   - id: "styra"
     name: "styra"
@@ -14,9 +15,9 @@ items:
   - id: "capitalone"
     name: "Capital One"
     sponsor_logo: "https://d33wubrfki0l68.cloudfront.net/77c2d62fddc2520b2e2ffcbb451cf14af30d032e/e7baa/img/sponsors/capitalone.png"
-  - id: "progress"
-    name: "Progress"
-    sponsor_logo: "https://d33wubrfki0l68.cloudfront.net/f9a6560dead20750facf16902178ec4e89bcc8cb/6730b/img/sponsors/progress.png"
+  - id: "chef"
+    name: "Chef Software, Inc"
+    sponsor_logo: "https://d33wubrfki0l68.cloudfront.net/dc3136bcdc9aeeeaf73d0d553422bb2007a82c7b/75365/img/sponsors/chef.png"
   - id: "cloudtruth"
     name: "CloudTruth"
     sponsor_logo: "https://d33wubrfki0l68.cloudfront.net/ac9f54dcdc83b975889e3f4ad5c89e65b2ab5e74/238e9/img/sponsors/cloudtruth.png"
