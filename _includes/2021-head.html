@@ -30,6 +30,14 @@
     {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/speakers/socials/{{ speaker.id }}.jpg{% endcapture %}
   {% endif %}
 {% endif %}
+{% if page.custom_og_image %}
+  {% assign check_rel = page.custom_og_image | split:'/' | first %}
+  {% if check_rel == "" %}
+    {% capture social_image %}{{ site.produrl }}{{ page.custom_og_image }}{% endcapture %}
+  {% else %}
+    {% capture social_image %}{{ page.custom_og_image }}{% endcapture %}
+  {% endif %}
+{% endif %}
 <meta name="twitter:title" content="{{ social_title }}">
 <meta name="twitter:description" content="{{ social_description }}">
 <meta name="twitter:image" content="{{ social_image }}">
