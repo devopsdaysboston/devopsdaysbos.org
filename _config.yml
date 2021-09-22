@@ -10,6 +10,7 @@ show_github: false
 google_analytics_tag: UA-137417319-8
 produrl: "https://devopsdaysbos.org"
 event_short_title: DevOpsDays Boston 2021
+grandparent_site: https://devopsdays.org/events/2021-boston/welcome/
 
 # Build settings
 theme: minimal-mistakes-jekyll
@@ -27,6 +28,8 @@ masthead_title: "DevOpsDays Boston 2021"
 
 # header_pages: []
 
+current_event:
+  dates: "Sept 27 & 28"
 registration:
   is_open: true
   direct_link: "https://ti.to/devopsdaysbos/2021"
