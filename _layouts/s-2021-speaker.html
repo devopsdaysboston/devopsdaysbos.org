@@ -29,7 +29,10 @@ layout: s-2021-default
     {% endif %}
 
     <h2>{{ person.title }}</h2>
+    {% if 1==0 %}
     <a href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session on {{ person.date | date: '%B %d, %Y' }} from {{ person.start_time | date: '%k:%M%P' }} to {{ person.end_time | date: '%k:%M%P' }} EST</a>
+    {% endif %}
+    <a href="https://vi.to/hubs/devopsdays-boston-2021/pages/{{ person.id }}">Watch this Session</a>
     <p>
       {{ person.abstract | markdownify }}
     </p>
