@@ -32,7 +32,7 @@ layout: s-2021-default
     {% if 1==0 %}
     <a href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session on {{ person.date | date: '%B %d, %Y' }} from {{ person.start_time | date: '%k:%M%P' }} to {{ person.end_time | date: '%k:%M%P' }} EST</a>
     {% endif %}
-    <a href="https://vi.to/hubs/devopsdays-boston-2021/pages/{{ person.id }}">Watch this Session</a>
+    <a href="https://vi.to/hubs/devopsdays-boston-2021/pages/{{ person.id }}">Watch this Session (includes captions)</a>
     <p>
       {{ person.abstract | markdownify }}
     </p>
@@ -46,3 +46,19 @@ layout: s-2021-default
 {% if content.size < 1 %}
   {% include person-bio.html person=person addpath=addpath %}
 {% endif %}
+<style type="text/css">
+.content-section {
+  text-shadow: 5px 5px 10px #fff, 5px 5px 10px #ccc;
+}
+.full-page-background {
+  background: url(/assets/{{ addpath }}images/graphic_recordings/gr-{{ person.id }}.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.10;
+  position: fixed;
+  top: 90px;
+  left: -5%;
+  height: 150vh;
+  width: 250vh;
+}
+</style>
