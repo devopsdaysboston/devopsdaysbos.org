@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% assign addpath = "2022/" %}
+
+<link rel="stylesheet" href="{{ '/assets/2022/style.css?v=' | append: site.github.build_revision | relative_url }}">
+<div style="padding:1em;">
+  <div class="full-page-background">
+    .
+  </div>
+<div class="content-section" style="position: relative;">
+{{ content }}
+</div>
+</div>
+<style type="text/css">
+  .full-page-background {
+    background: url(/assets/{{ addpath }}images/wide-background.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.10;
+    position: fixed;
+    top: 90px;
+    left: -5%;
+    height: 150vh;
+    width: 250vh;
+  }
+</style>

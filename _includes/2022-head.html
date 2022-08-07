@@ -1,0 +1,45 @@
+{% assign addpath = "2022/" %}
+{% assign is_presenter_page=false %}
+{% assign is_sponsor_page=false %}
+{% if page.permalink %}
+  {% if page.permalink contains "/speakers/" %}
+    {% assign is_presenter_page=true %}
+  {% endif %}
+  {% if page.permalink contains "/sponsors/" %}
+    {% assign is_sponsor_page=true %}
+  {% endif %}
+{% endif %}
+{% capture social_title %}{{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+{% capture social_description %}{{ speaker.bio }}{% endcapture %}
+{% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/speakers/socials/everyone.jpg{% endcapture %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:creator" content="@{{ site.twitter_username }}">
+{% assign is_bannerable_page=false %}
+{% if is_sponsor_page == true %}
+  {% capture social_title %}{{ page.sponsor_name }} at {{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+  {% capture social_description %}{% endcapture %}
+  {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/sponsors/socials/{{ page.id }}.jpeg{% endcapture %}
+{% endif %}
+{% if is_presenter_page == true %}
+  {% assign speaker = site.data.s-2022-speakers.items | where_exp:"item", "item.id == page.id" | first %}
+  {% if speaker %}
+    {% assign is_bannerable_page=true %}
+    {% capture social_title %}{{ speaker.name }} at {{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
+    {% capture social_description %}{{ speaker.bio }}{% endcapture %}
+    {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/socials/{{ speaker.id }}.jpg{% endcapture %}
+  {% endif %}
+{% endif %}
+{% if page.custom_og_image %}
+  {% assign check_rel = page.custom_og_image | split:'/' | first %}
+  {% if check_rel == "" %}
+    {% capture social_image %}{{ site.produrl }}{{ page.custom_og_image }}{% endcapture %}
+  {% else %}
+    {% capture social_image %}{{ page.custom_og_image }}{% endcapture %}
+  {% endif %}
+{% endif %}
+<meta name="twitter:title" content="{{ social_title }}">
+<meta name="twitter:description" content="{{ social_description }}">
+<meta name="twitter:image" content="{{ social_image }}">
+<!-- og:description and title are handled by seo.html include and page.title page.description -->
+<meta property="og:image" content="{{ social_image }}">
