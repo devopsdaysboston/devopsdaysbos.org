@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Home"
-redirect_to: https://devopsdays.org/events/2021-boston/welcome/
+redirect_to: https://devopsdays.org/events/2022-boston/welcome/
 ---
 # This is placeholder content!
 

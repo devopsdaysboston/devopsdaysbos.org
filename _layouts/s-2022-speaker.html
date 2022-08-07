@@ -1,0 +1,66 @@
+---
+layout: s-2022-default
+---
+
+{% assign addpath = "2022/" %}
+{% assign person = site.data.s-2022-speakers.items | where_exp:"item", "item.id == page.id" | first %}
+{% assign content = content | markdownify | strip %}
+
+
+<div class="flexbox">
+  {% include person-left.html person=person extracontent=content addpath=addpath %}
+  <div style="min-width:300px;flex:1;align-self:flex-start;">
+    {% if person.legacy_page %}
+      {% if person.legacy_page.size > 0 %}
+    <div style="font-size:0.5em;">Redirecting to <a href="{{person.legacy_page}}">{{person.legacy_page}}</a> <span id="redirect_seconds"></span></div>
+    <script type="text/javascript">
+      window.onloadqueue=(window.onloadqueue||[]).concat([function () {
+        var secondsLeft = 6000;
+        setInterval(function() {
+          $("#redirect_seconds").text("in "+secondsLeft + " seconds");
+          secondsLeft--;
+        },1000);
+        setTimeout(function() {
+          document.location="{{person.legacy_page}}"
+        },secondsLeft*1000);
+      }]);
+    </script>
+      {% endif %}
+    {% endif %}
+
+    <h2>{{ person.title }}</h2>
+    {% if 1==1 %}
+    <a href="{{ site.registration.direct_link }}" style="font-size:0.9em;">Attend this Session on {{ person.date | date: '%B %d, %Y' }} from {{ person.start_time | date: '%k:%M%P' }} to {{ person.end_time | date: '%k:%M%P' }} EST</a>
+    {% endif %}
+    <!-- a href="https://vi.to/hubs/devopsdays-boston-2021/pages/{{ person.id }}">Watch this Session (includes captions)</a -->
+    <p>
+      {{ person.abstract | markdownify }}
+    </p>
+    {% if content.size > 0 %}
+      <p>
+      {% include person-bio.html person=person addpath=addpath %}
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% if content.size < 1 %}
+  {% include person-bio.html person=person addpath=addpath %}
+{% endif %}
+<style type="text/css">
+.content-section {
+  text-shadow: 5px 5px 10px #fff, 5px 5px 10px #ccc;
+}
+/*
+.full-page-background {
+  background: url(/assets/{{ addpath }}images/graphic_recordings/gr-{{ person.id }}.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.10;
+  position: fixed;
+  top: 90px;
+  left: -5%;
+  height: 150vh;
+  width: 250vh;
+}
+*/
+</style>

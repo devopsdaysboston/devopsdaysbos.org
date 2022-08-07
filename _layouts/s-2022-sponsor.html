@@ -1,0 +1,32 @@
+---
+layout: s-2021-default
+---
+
+{% assign addpath = "2021/" %}
+{% assign content = content | markdownify | strip %}
+
+<div class="flexbox">
+
+  {% include sponsor-left.html addpath=addpath %}
+
+  <div style="min-width:300px;flex:1;align-self:flex-start;">
+    <h2><a href="{{ site.registration.direct_link }}">{{ page.title }}</a></h2>
+    <p>
+      As a {{ page.sponsor_level }} sponsor of {{ site.title }}, <a href="{{ page.sponsor_link }}">{{ page.sponsor_name }}</a> provides
+      meaningful financial support of our technical community.
+    </p>
+    <p>
+      We encourage folks
+      to join <a href="{{ page.sponsor_link }}">{{ page.sponsor_name }}</a> for conversation in our Discord server, and
+      to join us all in the event hub by <a href="{{ site.registration.direct_link }}">grabbing a ticket (donate or free)</a>.
+    </p>
+    <p>
+      {% if page.sponsor_level == "Platinum" %}
+      A HUGE thanks to <a href="{{ page.sponsor_link }}">{{ page.sponsor_name }}</a> for supporting our community!
+      {% endif %}
+
+
+      {{ content }}
+    </p>
+  </div>
+</div>
