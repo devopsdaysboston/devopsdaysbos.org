@@ -18,7 +18,7 @@
 {% assign is_bannerable_page=false %}
 {% if is_sponsor_page == true %}
   {% capture social_title %}{{ page.sponsor_name }} at {{ site.event_short_title }} {{ site.current_event.dates }}{% endcapture %}
-  {% capture social_description %}{% endcapture %}
+  {% capture social_description %}Grab your ticket today to join our local tech community!{% endcapture %}
   {% capture social_image %}{{ site.produrl }}/assets/{{ addpath }}images/sponsors/socials/{{ page.id }}.jpeg{% endcapture %}
 {% endif %}
 {% if is_presenter_page == true %}
