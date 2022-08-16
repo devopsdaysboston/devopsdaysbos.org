@@ -1,5 +1,50 @@
 \nitems: []
 items:
+  - id: "malcolm-preston"
+    name: "Malcolm Preston"
+    role: "presenter"
+    bio: "Joseph \"Malcolm\" Preston is a Staff Software Engineer at FireHydrant. He also spent time at Hudl, Thunderbolt Labs, and Ideeli. Based in New Rochelle, NY, Malcolm enjoys sports videography and photography, problem solving, and spending time with family."
+    date: "2022-09-12"
+    start_time: "09:45"
+    end_time: "10:20"
+    title: "We can’t all be Shaq : why it’s time for the SRE hero to pass the ball and how to make it happen"
+    abstract: "\n\nShaquille O’Neal is one of the most celebrated NBA players of all time. He played for six teams over his 19-year career and won countless awards — and for good reason. When the team needed two points, they knew they could throw the ball to Shaq, and let him go to work. He’d inevitably push someone around (hard not to do at 7’1” and 300+ pounds), dunk the ball, and the crowd would go wild.\n\nThe skills (and probably the size) are different, but there are a lot of engineers playing the Shaq role at their company. When the 2 a.m. outage page goes out, they’re the first to respond. These nebulous heroes find the problem, determine the affected areas, fix the issue (or know who to call to fix the issue), wake up the VP, draft messages to send to customers and stakeholders, create tickets to address why things went bad. Then at 9 a.m., they go back to the job they were hired to do. Backs are patted, and life goes back to normal until the next 2 a.m. page.\n\nSo what’s the problem here? Games are getting won, incidents are getting solved, it’s true. But are you truly setting your organization or team up for success by just “doing it for them” every time? A win doesn’t always have to come from a backboard-shattering slam dunk, and relying on the most dominant player to save the day isn't a scalable solution for an organization’s continued success. Attend this talk to understand why it’s time to pass the ball and learn three ways you can take fast action to get there today."
+    handles:
+      twitter: "Malkolm"
+  - id: "steve-mcghee"
+    name: "Steve McGhee"
+    role: "presenter"
+    bio: "Steve was an SRE at Google for about 10 years in Android, YouTube and Cloud. He then joined a company to build reliable systems on the Cloud. Now he's back at Google, helping more companies do that."
+    date: "2022-09-12"
+    start_time: "10:20"
+    end_time: "10:55"
+    title: "Enterprise Roadmap for SRE"
+    abstract: "\n\nDescription:\n\n* Learn about the challenges of adopting site reliability engineering (SRE) in enterprises, and how we recommend cloud customers go about this journey:\n    * Influence adoption of SRE best practices by Cloud customers through evaluating their existing environment and architecture\n    * Identify how SRE guiding principles fit into a cloud customers existing organization (e.g. how to embrace risk)\n    * Adapt SRE practices for a cloud customers existing team structure and knowledge\n    * Nurture a successful SRE initiative outside of Google\n* Stepping through the report:\n    * Getting Started with Enterprise SRE\n    * Why the SRE Approach to Reliability?\n    * SRE Principles\n    * SRE Practices\n    * Actively Nurturing Success\n    * Not Just Google\n\nAudience Takeaways:\n\n* How to improve the odds that SRE will be successful in your Enterprise \n* Hear some examples of teams who have tried in the past and what problems they encountered, and what they did to overcome them!\n* Understand the level of reliability and investment is not the same for every organization, know before you go!"
+    handles:
+      twitter: "stevemcghee"
+  - id: "daniel-kim"
+    name: "Daniel Kim"
+    role: "presenter"
+    bio: "Daniel Kim (He/Him) is a Lead Developer Relations Engineer at New Relic and the founder of Bit Project, a 501(c)(3) nonprofit dedicated make tech accessible to underserved communities. He wants to inspire generations of students in tech to be the best they can be through inclusive, accessible developer education. He is passionate about diversity and inclusion in tech, good food, and dad jokes."
+    date: "2022-09-12"
+    start_time: "11:10"
+    end_time: "11:45"
+    title: "Achieving 99.99% uptime with Open Source Observability"
+    abstract: "\n\nThe standard for a reliable system is 99.99% uptime, which requires teams to have full visibility into their systems to quickly find and fix issues. With the rise of distributed applications spanning the cloud, on-prem deployments, and SaaS solutions, it becomes increasingly complex to pinpoint and find the root cause of performance issues.\n\nIn this session, we will discuss the complexities that come alongside getting visibility into your distributed systems running in the cloud as they scale. Then learn how OpenTelemetry collects, processes, and forwards telemetry data from your applications to your observability solution, enabling end-to-end visibility to quickly identify and fix issues."
+    handles:
+      twitter: "learnwdaniel"
+  - id: "kam-lasater"
+    name: "Kam Lasater"
+    role: "presenter"
+    bio: "Kam has worked in early stage software companies since graduating with a degree in Computer Engineering from Carnegie Mellon University. He has founded two venture backed startups, been an executive during two acquisitions and been a board member of a community bank. He lives near Philadelphia PA with his wife and three boys."
+    date: "2022-09-12"
+    start_time: "12:50"
+    end_time: "13:25"
+    title: "How to Fail at Serverless (without even trying)"
+    abstract: "\n\nThis talk takes an irreverent view of common anti-patterns encountered when designing, building and deploying serverless applications. This includes: cost, reliability and security concerns. Technical details focus on AWS as a deployment environment but are applicable to other cloud environments as well.\n\nAll names have been changed to protect the innocent and not so innocent."
+    website: "https://kamlasater.com"
+    handles:
+      twitter: "seekayel"
   - id: "andreas-grabner"
     name: "Andreas Grabner"
     role: "presenter"
@@ -22,6 +67,17 @@ items:
     abstract: "\n\nWhen coaching my three daughters and their soccer teams for over 15 years, I started each season with a discussion about my philosophy about feedback. My mantra is that you don’t need to be bad to get better. I am coaching you not because I think you’re terrible but because I see true potential in you and I want you to be better. I carry that into my professional life and the relationships with my coworkers and my teams.\n\nWe are not good at feedback, both giving and receiving. It can be uncomfortable to hear that you could have done better. It is awkward to give direct and honest feedback when the message is “you did not meet my expectations.” Usually the receiver is left feeling inadequate. The truth is that we need to change our culture such that feedback becomes a gift. A gift that is given to someone that we care about. A gift that is received from someone that we respect.\n\nWhether the feedback is verbal or written, from a person 1:1, from your teammates during a retrospective or information from your tools or pipelines, it should be embraced for your journey of continuous improvement. It is mandatory for a learning organization. It is imperative for Agile and DevOps! There are some important guidelines that should be followed for this to be successful and I will go into them in depth."
     handles:
       twitter: "PeteChestna"
+  - id: "gad-salner"
+    name: "Gad Salner"
+    role: "presenter"
+    bio: "[Gad Salner](https://www.linkedin.com/in/gadsalner/) is a Group Manager at Melio, where he leads the development of their client-facing payment solution. With over 15 years of experience in development, Gad is an enthusiastic and innovative team player with a background in engineering, management, and architecture. He has a strong track record of leading product development in startups. His devotion to driving projects forward, creating a winning team culture and building awesome products has been his passion since the beginning. Gad is also one of the creators of [Kaduregel Shefel](https://forward.com/culture/398295/how-a-cult-israeli-tv-show-about-soccer-swept-europe-kinda/), a project capturing Israel’s cultural diversity through amateur football. i[The project produces exhibitions](https://www.theguardian.com/football/gallery/2015/aug/04/jewish-arab-football-diversity-co-existence-in-pictures) videos and events which they show around the world, and interact with the large community gathered around it. Gad attributes his unique blend of management methodologies to lessons learned at many different startups over the last 15 years, and from Kaduregel Shefel, where he ran a global cultural project. He had no idea just how incredibly useful this set of tools would be during a global pandemic. But c’est la vie!"
+    date: "2022-09-13"
+    start_time: "10:20"
+    end_time: "10:55"
+    title: "How to scale a unicorn-building engineering team (and stay sane)"
+    abstract: "\n\nTHE most common question I get asked by people familiar with my recent journey is: ״how the hell did you go from a team of 1 to a 25 person engineering group in a year?״\n\nWe weren’t short on challenges this past year: lockdowns, remote onboarding for new employees, and hyper-growth struggles. Each of these can break a team on their own. But when you create and instill fundamental habits that grow individual capabilities, expanding the team isn’t just possible, it’s actually quite a natural progression.\n\nWithout a solid game plan wouldn’t have made it very far. And moving forward, we’ve laid a roadmap that gradually empowers those 25 engineers to grow and take ownership, paving the way for the next 50.\n\nThis is the story behind one of our engineering groups, and how we’re building a kickass, world-class team, which among other things, is changing the conversation around payments.\n\nIn this talk, I’ll take a deep dive into our new strategy step-by-step, from planning to execution: my structured game plan for empowering engineers to drive your team’s rapid growth in size, responsibility, and impact."
+    handles:
+      twitter: "GadSalner"
   - id: "adarsh-shah"
     name: "Adarsh Shah"
     role: "presenter"
@@ -31,8 +87,20 @@ items:
     end_time: "11:45"
     title: "From Infrastructure as Code to Environment as Code : Challenges scaling IaC and how to resolve them"
     abstract: "\n\nInfrastructure as Code(IaC) has made managing infrastructure easier in a lot of ways, but there are many challenges that companies accept as the cost of adopting IaC especially when scaling. IaC is good at provisioning individual resources (or a few of them together) but engineering teams want an entire environment with various components like networking, platform (ec2/eks), database, s3 buckets, etc. to deploy and operate their applications.\n\nTo provision and tear down an entire environment, these teams have two options. They can either hand roll pipelines to manage individual resources and then manage complex dependencies between these resources within those pipelines or create a monolith IaC for the entire environment. These approaches are inefficient and slow down feature development and innovation. They also make replicating, visualizing & understanding environments difficult. What if there were a better way?\n\nThis talk digs into these challenges to try to better understand them and then look at how to resolve them. We will introduce Environment as Code (abstraction over IaC) that enables teams to provision & teardown entire Environments in an efficient way and promotes best practices like loosely coupled infrastructure resources."
+    website: "https://zlifecycle.com/"
+    handles:
+      twitter: "shahadarsh"
+  - id: "thomas-stringer"
+    name: "Thomas Stringer"
+    role: "presenter"
+    bio: "Thomas Stringer is a Principal Software Engineer Lead at Microsoft, and enjoys all things programming. He is primarily focused on Kubernetes, Linux, DevOps, and the cloud. When not on a computer, Thomas can be found surfing or snowboarding in northern New England."
+    date: "2022-09-13"
+    start_time: "13:25"
+    end_time: "14:00"
+    title: "Zero to Secure : Using Open Service Mesh to Easily Reduce Your Kubernetes Attack Surface"
+    abstract: "\n\nAs applications are being built on modern platforms like the cloud and Kubernetes, we need to continue to answer these important security questions: Who can access what? What happens when (not if) an intruder gets into my Kubernetes cluster? What can they do? What data can they see and steal? Service meshes can answer these questions and bring important benefits to the software ecosystem. Let’s get hands on with Open Service Mesh to demonstrate how this can be done in a quick, easy, and effortless way. You shouldn’t have to be a service mesh expert to harden your Kubernetes cluster.\n\nFollow along as Thomas Stringer, a project maintainer, introduces Open Service Mesh, an Envoy-based Cloud Native Computing Foundation (CNCF) service mesh. You will walk away from this session knowing how to effectively and effortlessly implement defense in depth in your Kubernetes cluster: All with no application or code changes. After entering a few commands and understanding a few basic topics, you will be able to answer all those intimidating security questions with confidence!"
     website: |2-
-      https://zlifecycle.com/
+      https://trstringer.com
     handles:
       twitter: |2-
-        shahadarsh
+        tr_stringer

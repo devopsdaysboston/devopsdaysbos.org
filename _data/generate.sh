@@ -127,16 +127,19 @@ description: \"$speaker_title\"
 ---
     """ > $PAGE_PATH
 
+    speaker_bio_escaped=${speaker_bio//[\"]/\\\"}
+    speaker_title_escaped=${speaker_title//[\"]/\\\"}
+    speaker_abstract_escaped=${speaker_abstract//[\"]/\\\"}
     yqstmt="""
       .items[$INDEX].id = \"$ID\" |
       .items[$INDEX].name = \"$speaker_fullname\" |
       .items[$INDEX].role = \"presenter\" |
-      .items[$INDEX].bio = \"$speaker_bio\" |
+      .items[$INDEX].bio = \"$speaker_bio_escaped\" |
       .items[$INDEX].date = \"$talk_date\" |
       .items[$INDEX].start_time = \"$talk_start_time\" |
       .items[$INDEX].end_time = \"$talk_end_time\" |
-      .items[$INDEX].title = \"$speaker_title\" |
-      .items[$INDEX].abstract = \"$speaker_abstract\" |
+      .items[$INDEX].title = \"$speaker_title_escaped\" |
+      .items[$INDEX].abstract = \"$speaker_abstract_escaped\" |
       .. style=\"double\"
     """
     if [ "$speaker_website" ]; then
@@ -149,6 +152,9 @@ description: \"$speaker_title\"
       .items[$INDEX].handles.twitter = \"$speaker_twitter\"
       """
     fi
+    echo "___"
+    echo $yqstmt
+    echo "---"
     yq eval -i "$yqstmt" $DATA_PATH
 
     INDEX=$(($INDEX + 1))
