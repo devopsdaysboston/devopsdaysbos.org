@@ -38,8 +38,8 @@
     {% capture social_image %}{{ page.custom_og_image }}{% endcapture %}
   {% endif %}
 {% endif %}
-<meta name="twitter:title" content="{{ social_title }}">
-<meta name="twitter:description" content="{{ social_description }}">
+<meta name="twitter:title" content="{{ social_title | replace: '"', "'" }}">
+<meta name="twitter:description" content="{{ social_description | replace: '"', "'" }}">
 <meta name="twitter:image" content="{{ social_image }}">
 <!-- og:description and title are handled by seo.html include and page.title page.description -->
 <meta property="og:image" content="{{ social_image }}">
