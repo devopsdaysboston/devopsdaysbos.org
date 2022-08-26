@@ -4,7 +4,6 @@ id: schedule
 permalink: /2022/schedule
 ---
 
-<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
