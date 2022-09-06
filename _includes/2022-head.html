@@ -38,6 +38,9 @@
     {% capture social_image %}{{ page.custom_og_image }}{% endcapture %}
   {% endif %}
 {% endif %}
+{% if page.custom_og_description %}
+  {% capture social_description %}{{ page.custom_og_description }}{% endcapture %}
+{% endif %}
 <meta name="twitter:title" content="{{ social_title | replace: '"', "'" }}">
 <meta name="twitter:description" content="{{ social_description | replace: '"', "'" }}">
 <meta name="twitter:image" content="{{ social_image }}">
